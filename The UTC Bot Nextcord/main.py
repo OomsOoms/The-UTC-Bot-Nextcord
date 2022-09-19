@@ -260,4 +260,4 @@ async def submit_solves(ctx, solve1, solve2, solve3, solve4, solve5):
   except KeyboardInterrupt:
     await ctx.send("Invaild syntax, mention staff if you need help", ephemeral=True)
 
-bot.run("OTgyNjEzMTY1MTk4MTU1ODg2.GR_sZu.y8puBj2FdQh91tW2RbfvZiGLnf7cUyC7C2LkEE") 
+bot.run("TOKEN") 
