@@ -80,7 +80,7 @@ def init_admin_cmds(bot):
 
             def update_lb(bttn_label):
                 comp_data_df = pd.read_csv(competition_results_path)
-                sorted_data = comp_data_df.sort_values(by="average", ascending=False).to_dict("list")
+                sorted_data = comp_data_df.sort_values(by="average", ascending=True).to_dict("list")
 
                 leaderboard = "⠀"
                 placement = 1
