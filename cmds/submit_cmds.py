@@ -66,9 +66,11 @@ def init_submit_cmd(bot):
               "times_list": [times_list],
               "average": [average]
             }
-
+            print("writing")
             new_results = pd.DataFrame(new_results) # Writing new results to CSV file
             new_results.to_csv(competition_results_path, mode='a', index=False, header=False)
+            print("done")
+            print(open(competition_results_path).read())
 
             embed = nextcord.Embed(title=f"{ctx.user.name} Results!", color=ctx.user.colour) # Making embed
             embed.add_field(name="Average", value=f"⠀{average}", inline=False)
@@ -78,5 +80,5 @@ def init_submit_cmd(bot):
 
             try: await bot.get_channel(int(config_dict["log_channel"][0])).send(f"<@{ctx.user.id}> Submited **{key[:len(key)-2]}** results")  # type: ignore
             except: pass
-        except: await ctx.send("Invaild syntax, mention staff if you need help", ephemeral=True)
+        except KeyboardInterrupt: await ctx.send("Invaild syntax, mention staff if you need help", ephemeral=True)
         break
